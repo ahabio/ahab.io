@@ -34,6 +34,11 @@ header, h1, h2, h3, h4, h5, h6 {
   color: $text-header-color;
 }
 
+a {
+  color: $text-body-color;
+  text-decoration: none;
+}
+
 section.jumbotron {
   $vertical-padding: 84px;
 
@@ -82,6 +87,58 @@ section.jumbotron {
     .learn {
       font-size: 21px;
       margin-top: 20px;
+    }
+  }
+
+  .search-results {
+    background: $white;
+    color: $text-body-color;
+    display: none;
+    min-height: 200px;
+    text-align: left;
+
+    h5 {
+      margin: 0;
+    }
+
+    .search-top {
+      line-height: 52px;
+      vertical-align: middle;
+
+      .close {
+        text-align: right;
+      }
+    }
+
+    .search-body {
+      ul {
+        border-top: 2px solid $light-grey;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          border-bottom: 1px solid $light-grey;
+
+          h4 {
+            margin: 10px 0;
+          }
+
+          h5 {
+            font-size: 12px;
+          }
+
+          p {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .search-footer {
+      height: 52px;
+      line-height: 52px;
+      text-align: center;
     }
   }
 }
