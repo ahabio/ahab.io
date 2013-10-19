@@ -16,6 +16,7 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     rack (1.5.2)
+    rake (10.1.0)
 
 PLATFORMS
   ruby
@@ -23,3 +24,4 @@ PLATFORMS
 DEPENDENCIES
   capistrano (~> 2.15)
   rack (~> 1.5.2)
+  rake (~> 10.0)
