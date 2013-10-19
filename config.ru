@@ -1,6 +1,5 @@
-require 'rack/file'
+$LOAD_PATH << 'lib'
 
-use Rack::Static, :urls => ["/images", "/js", "/css"],
-                  :root => "public",
-                  :index => 'index.html'
-run Rack::File.new('public')
+require 'ahab_application'
+
+run AhabApplication.new
