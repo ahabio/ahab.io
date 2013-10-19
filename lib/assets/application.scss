@@ -1,11 +1,29 @@
 $background-color: #fff;
 $text-body-color: #333;
 $text-header-color: $text-body-color;
-$sea-blue: #233654;
+
+$sea-blue: hsl(217, 58, 29);
+$peach: hsl(27, 57, 72);
+$white: #fff;
 
 body {
   background-color: $background-color;
   color: $text-body-color;
+  font-family: "Helvetice Neue", "Helvetica", sans-serif;
+
+  &, .full-viewport {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+button, .btn {
+  background-color: $peach;
+  border-color: transparent;
+  border-radius: 4px;
+  color: $white;
+  padding: 5px;
 }
 
 header, h1, h2, h3, h4, h5, h6 {
@@ -13,11 +31,23 @@ header, h1, h2, h3, h4, h5, h6 {
 }
 
 section.jumbotron {
-  background-color: $sea-blue;
-  color: #fff;
-  text-align: center;
-}
+  $vertical-padding: 84px;
 
-header.page-top {
-  opacity: 84%;
+  background-color: $sea-blue;
+  padding-bottom: $vertical-padding;
+  font-size: 18;
+  text-align: center;
+
+  &, h1 { color: $white; }
+  &, .page-top { width: 100%; }
+
+  .page-top {
+    background: rgba(255, 255, 255, 0.16);
+    padding: 12px 0;
+  }
+
+  h1 {
+    font-size: 70px;
+    margin: $vertical-padding 0 0 0;
+  }
 }
