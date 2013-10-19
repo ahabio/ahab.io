@@ -1,5 +1,6 @@
 require 'sinatra'
-require "sinatra/reloader" if development?
+require 'sinatra/reloader' if development?
+require 'honeybadger'
 
 class AhabApplication < Sinatra::Base
   set(:project_root)  { File.expand_path('../../', __FILE__) }
@@ -9,6 +10,12 @@ class AhabApplication < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+
+  Honeybadger.configure do |config|
+    config.api_key = ENV['HONEYBADGER_API_KEY']
+  end
+
+  use Honeybadger::Rack
 
   get '/' do
     erb :index

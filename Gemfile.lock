@@ -33,6 +33,8 @@ GEM
       guard
       rake
     highline (1.6.20)
+    honeybadger (1.8.1)
+      json
     json (1.8.1)
     listen (2.1.1)
       celluloid (>= 0.15.2)
@@ -87,6 +89,7 @@ DEPENDENCIES
   cucumber
   guard
   guard-rake
+  honeybadger (~> 1.8.1)
   json
   rack (~> 1.5.2)
   rack-test
