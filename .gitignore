@@ -1,3 +1,5 @@
 /.sass-cache
 /public
 /vendor/assets
+/vendor/bundles
+/config/database.yml

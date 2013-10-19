@@ -3,6 +3,22 @@ namespace :assets do
   desc 'Compile assets'
   task :compile => :fetch
 
+  def copy_asset_task(name)
+    infile  = "lib/assets/#{name}"
+    outfile = "public/#{name}"
+
+    copy_task = file(outfile => infile) do |task|
+      FileUtils.cp(infile, task.name)
+      puts "Wrote #{task.name}"
+    end
+
+    task :compile => copy_task
+  end
+
+  Dir.glob('lib/assets/*.png').each do |png|
+    copy_asset_task png.sub('lib/assets/', '')
+  end
+
   def asset_concatenation_task(name, *infiles)
     task_name = "public/#{name}"
 
