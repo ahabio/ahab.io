@@ -31,8 +31,8 @@ require 'bundler/capistrano'
 ##                                         ##
 #############################################
 
-GITHUB_REPOSITORY_NAME = ''
-LINODE_SERVER_HOSTNAME = ''
+GITHUB_REPOSITORY_NAME = 'r13-team-352'
+LINODE_SERVER_HOSTNAME = 'li582-203.members.linode.com'
 
 #############################################
 #############################################
