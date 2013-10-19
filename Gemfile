@@ -5,6 +5,9 @@ gem 'sass', '~> 3.2.12'
 gem 'sinatra', '~> 1.4.3'
 gem 'sinatra-contrib', '~> 1.4.1'
 gem 'honeybadger', '~> 1.8.1'
+gem 'activerecord', '~> 4.0.0'
+gem 'sinatra-activerecord'
+gem 'mysql2'
 
 group 'development' do
   gem 'json'

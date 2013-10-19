@@ -1,8 +1,11 @@
 require 'sinatra'
+require 'sinatra/activerecord'
 require 'sinatra/reloader' if development?
 require 'honeybadger'
 
 class AhabApplication < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+
   set(:project_root)  { File.expand_path('../../', __FILE__) }
   set(:public_folder) { File.join(project_root, 'public') }
   set(:css_dir)       { public_folder }
