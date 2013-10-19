@@ -30,4 +30,6 @@ namespace :assets do
     task :compile => compilation_task
   end
 
+  sass_task 'application'
+
 end

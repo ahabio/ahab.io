@@ -1,0 +1,23 @@
+$background-color: #fff;
+$text-body-color: #333;
+$text-header-color: $text-body-color;
+$sea-blue: #233654;
+
+body {
+  background-color: $background-color;
+  color: $text-body-color;
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+  color: $text-header-color;
+}
+
+section.jumbotron {
+  background-color: $sea-blue;
+  color: #fff;
+  text-align: center;
+}
+
+header.page-top {
+  opacity: 84%;
+}
