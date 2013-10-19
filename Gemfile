@@ -12,6 +12,11 @@ group 'development' do
   gem 'rake', '~> 10.0'
 end
 
+group 'test' do
+  gem 'rack-test'
+  gem 'cucumber'
+end
+
 group 'deployment' do
   gem 'capistrano', '~> 2.15', require: nil
 end
