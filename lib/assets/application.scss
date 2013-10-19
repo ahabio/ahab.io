@@ -44,6 +44,20 @@ section.jumbotron {
   .page-top {
     background: rgba(255, 255, 255, 0.16);
     padding: 12px 0;
+
+    .search {
+      background-color: transparent;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      color: $white;
+      font-size: 16px;
+      outline: none;
+      padding: 2px 8px;
+
+      &:focus {
+        border-color: $white;
+      }
+    }
   }
 
   h1 {
