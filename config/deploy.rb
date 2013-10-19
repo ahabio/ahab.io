@@ -69,15 +69,10 @@ set :branch,     "master"
 # Roles
 role :app, LINODE_SERVER_HOSTNAME
 role :db,  LINODE_SERVER_HOSTNAME, :primary => true
-role :www, LINODE_SERVER_HOSTNAME
 
 # Add Configuration Files & Compile Assets
-after 'deploy:update_code' do
-  # Setup Configuration
-  # run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-
-  # Compile Assets
-  # run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+after 'deploy:update_code', :roles => :app do
+  run "rake assets:compile"
 end
 
 # Restart Passenger
