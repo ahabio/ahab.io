@@ -72,7 +72,7 @@ role :db,  LINODE_SERVER_HOSTNAME, :primary => true
 
 # Add Configuration Files & Compile Assets
 after 'deploy:update_code', :roles => :app do
-  run "rake assets:compile"
+  run "cd #{current_path} && rake assets:compile"
 end
 
 # Restart Passenger
