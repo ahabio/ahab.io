@@ -19,6 +19,10 @@ namespace :assets do
     copy_asset_task png.sub('lib/assets/', '')
   end
 
+  Dir.glob('lib/assets/*.js').each do |js|
+    copy_asset_task js.sub('lib/assets/', '')
+  end
+
   def asset_concatenation_task(name, *infiles)
     task_name = "public/#{name}"
 
@@ -31,6 +35,7 @@ namespace :assets do
   end
 
   asset_concatenation_task 'vendor.css', 'vendor/assets/960_12_col.css'
+  asset_concatenation_task 'vendor.js', 'vendor/assets/jquery.min.js'
 
   def sass_task(name)
     infile  = "lib/assets/#{name}.scss"
