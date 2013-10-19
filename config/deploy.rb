@@ -64,7 +64,7 @@ set :admin_runner,               "www-data"
 # SCM Options
 set :scm,        :git
 set :repository, "git@github.com:railsrumble/#{GITHUB_REPOSITORY_NAME}.git"
-set :branch,     "master"
+set :branch,     "debugging_cap"
 
 # Roles
 role :app, LINODE_SERVER_HOSTNAME
@@ -72,6 +72,7 @@ role :db,  LINODE_SERVER_HOSTNAME, :primary => true
 
 # Add Configuration Files & Compile Assets
 after 'deploy:update_code', :roles => :app do
+  run "ls -al #{current_path}"
   run "cd #{current_path} && rake assets:compile"
 end
 
