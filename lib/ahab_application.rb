@@ -13,4 +13,16 @@ class AhabApplication < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  options '/' do
+    body ''
+    status 204
+
+    link_uri_template = '//cdnjs.com/assets/<name>/<version>/<filename>'
+    link_rel_info     = 'http://ahab.io/learn/x-asset-registry-uri'
+
+    headers({
+      'Link' => "<#{link_uri_template}>;rel=\"#{link_rel_info}\""
+    })
+  end
 end
