@@ -5,6 +5,8 @@ $text-header-color: $text-body-color;
 $sea-blue: hsl(217, 58, 29);
 $peach: hsl(27, 57, 72);
 $white: #fff;
+$light-grey: #a8a8a8;
+$medium-grey: #888;
 
 body {
   background-color: $background-color;
@@ -45,17 +47,26 @@ section.jumbotron {
     background: rgba(255, 255, 255, 0.16);
     padding: 12px 0;
 
+    .search, button {
+      font-size: 16px;
+      vertical-align: middle;
+    }
+
     .search {
       background-color: transparent;
       border: 2px solid transparent;
       border-radius: 10px;
-      color: $white;
-      font-size: 16px;
+      color: $light-grey;
+      margin: 2px 0;
       outline: none;
-      padding: 2px 8px;
+      padding: 5px 8px;
+
+      &:hover {
+        border-color: $medium-grey;
+      }
 
       &:focus {
-        border-color: $white;
+        border-color: $light-grey;
       }
     }
   }
