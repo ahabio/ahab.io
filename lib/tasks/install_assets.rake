@@ -15,6 +15,7 @@ namespace :assets do
     end
   end
 
+  desc 'Fetch assets from the Internet'
   task :fetch do |task|
     json = JSON.parse(File.read(config_path))
     root = json['root']
