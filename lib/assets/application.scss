@@ -147,6 +147,13 @@ section.metadata {
   }
 }
 
+section.stats {
+  background-color: $peach;
+  color: $white;
+  padding: 16px 0;
+  text-transform: uppercase;
+}
+
 footer.credits {
   $vertical-padding: 42px;
   padding: $vertical-padding 0 $vertical-padding;
