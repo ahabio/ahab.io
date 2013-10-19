@@ -34,6 +34,35 @@ header, h1, h2, h3, h4, h5, h6 {
   color: $text-header-color;
 }
 
+.line-on-sides {
+  line-height: 0.5;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      border-bottom: 2px solid;
+      top: 0;
+      width: 370px;
+    }
+
+    &:before {
+      right: 100%;
+      margin-right: 15px;
+    }
+    &:after {
+      left: 100%;
+      margin-left: 15px;
+    }
+  }
+}
+
 section.jumbotron {
   $vertical-padding: 84px;
 
@@ -119,6 +148,7 @@ section.metadata {
 
     h3 {
       color: rgba(255, 255, 255, 0.25);
+      margin: 42px 0;
     }
 
     .feature {
