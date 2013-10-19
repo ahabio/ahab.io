@@ -2,16 +2,28 @@ require 'json'
 
 namespace :assets do
 
-  def fetch_asset(root, asset)
-    url = asset['url']
-    filename = File.join(root, url.split('/').last)
-    sh "curl #{url} > #{filename}"
+  def config_path
+    'ahab.json'
   end
 
-  task :fetch do
-    json = JSON.parse(File.read('ahab.json'))
+  def asset_task(root, asset)
+    url = asset['url']
+    filename = File.join(root, url.split('/').last)
+
+    file filename => config_path do |task|
+      sh "curl #{url} > #{task.name}"
+    end
+  end
+
+  task :fetch do |task|
+    json = JSON.parse(File.read(config_path))
     root = json['root']
-    json['assets'].each { |asset| fetch_asset(root, asset) }
+
+    directory(root).invoke
+
+    json['assets'].each do |asset|
+      asset_task(root, asset).invoke
+    end
   end
 
 end
