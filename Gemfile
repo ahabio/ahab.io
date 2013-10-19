@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rack', '~> 1.5.2'
+gem 'sass', '~> 3.2.12'
 
 group 'development' do
   gem 'json'
