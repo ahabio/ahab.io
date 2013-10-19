@@ -8,6 +8,7 @@ GEM
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
     highline (1.6.20)
+    json (1.8.1)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -23,5 +24,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 2.15)
+  json
   rack (~> 1.5.2)
   rake (~> 10.0)
