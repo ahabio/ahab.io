@@ -27,4 +27,6 @@ namespace :assets do
     end
   end
 
+  rule %r{^vendor\/assets} => 'assets:fetch'
+
 end
