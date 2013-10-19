@@ -1,7 +1,7 @@
 namespace :assets do
 
   desc 'Compile assets'
-  task :compile
+  task :compile => :fetch
 
   def asset_concatenation_task(name, *infiles)
     task_name = "public/#{name}"

@@ -23,10 +23,9 @@ namespace :assets do
     directory(root).invoke
 
     json['assets'].each do |asset|
-      asset_task(root, asset).invoke
+      task = asset_task(root, asset)
+      task.invoke if task.needed?
     end
   end
-
-  rule %r{^vendor\/assets} => 'assets:fetch'
 
 end
