@@ -150,4 +150,14 @@ section.metadata {
 footer.credits {
   $vertical-padding: 42px;
   padding: $vertical-padding 0 $vertical-padding;
+  text-transform: uppercase;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  a:hover { text-decoration: underline; }
+
+  div + div { margin-top: 24px; }
 }
