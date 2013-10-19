@@ -35,4 +35,9 @@ class AhabApplication < Sinatra::Base
       'Link' => "<#{link_uri_template}>;rel=\"#{link_rel_info}\""
     })
   end
+
+  get '/humans.txt' do
+    content_type :txt
+    erb :humans
+  end
 end
