@@ -1,5 +1,5 @@
 {
-  "root": "assets",
+  "root": "vendor/assets",
 
   "assets": [
     {
