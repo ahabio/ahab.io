@@ -1,0 +1,15 @@
+mysql: &MYSQL
+  adapter: mysql2
+  username: root
+  host: 127.0.0.1
+  port: 3306
+  password:
+
+development: &development
+  <<: *MYSQL
+  database: ahab_development
+
+test:
+  <<: *MYSQL
+  database: ahab_test
+

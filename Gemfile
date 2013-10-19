@@ -8,12 +8,14 @@ gem 'honeybadger', '~> 1.8.1'
 gem 'activerecord', '~> 4.0.0'
 gem 'sinatra-activerecord'
 gem 'mysql2'
+gem 'require_all', '~> 1.3.1'
 
 group 'development' do
   gem 'json'
   gem 'guard'
   gem 'guard-rake'
   gem 'rake', '~> 10.0'
+  gem 'pry'
 end
 
 group 'test' do
