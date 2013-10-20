@@ -29,6 +29,7 @@ class AhabApplication < Sinatra::Base
   use Honeybadger::Rack
 
   helpers AssetHelpers
+  helpers TitleHelper
 
   get '/' do
     erb :index, layout: :desktop
@@ -65,6 +66,7 @@ class AhabApplication < Sinatra::Base
   end
 
   get '/documentation' do
+    self.page_title = 'Documentation'
     erb :desktop do
       erb :documentation do
         markdown :documentation
