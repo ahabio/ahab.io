@@ -38,7 +38,7 @@ class AhabApplication < Sinatra::Base
         h['name'] = asset.name
         h['homepage'] = asset.homepage
         h['description'] = asset.description
-        h['version'] = asset.asset_versions.order('value DESC').first.value
+        h['version'] = asset.optimistic_version
       end
       res << hash
     end
