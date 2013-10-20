@@ -337,16 +337,24 @@ section.stats {
       margin-top: 55px;
 
       a {
+        $x-padding: 10px;
+
         border-radius: 2px;
         color: $sea-blue;
         display: block;
-        padding: 5px 10px;
+        padding: 5px $x-padding;
 
         &, &:hover { text-decoration: none; }
         &.active, &:hover { background-color: $very-light-grey; }
         &.active { font-weight: 700; }
 
         &:not(:first-of-type) { margin-top: 2px; }
+
+        &.h3 {
+          font-size: 0.9em;
+          padding-left: $x-padding + 5px;
+          padding-right: $x-padding + 5px;
+        }
       }
     }
 
