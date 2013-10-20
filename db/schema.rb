@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020192100) do
+ActiveRecord::Schema.define(version: 20131020204736) do
 
   create_table "asset_versions", force: true do |t|
     t.string  "value",    null: false
     t.integer "asset_id", null: false
     t.string  "url",      null: false
   end
+
+  add_index "asset_versions", ["asset_id", "value"], name: "index_asset_versions_on_asset_id_and_value", unique: true, using: :btree
 
   create_table "assets", force: true do |t|
     t.string "name",        null: false
