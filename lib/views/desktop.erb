@@ -5,9 +5,35 @@
     <%= css :vendor %>
     <%= css :application %>
     <%= head_title %>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src='http://code.jquery.com/jquery-1.9.1.js'></script>
+    <script src='http://code.jquery.com/ui/1.10.3/jquery-ui.js'></script>
+
+    <script>
+    $(function() {
+      $("#publish-asset").click(function() {
+        $("#register-assets").dialog({
+          position: {my: "top", at: "top", of: window},
+          width: 'auto',
+          modal: true
+        });
+      });
+    });
+    </script>
   </head>
 
   <body>
+    <%= erb :publish_asset %>
+    <div id="flash_messages">
+      <% [ :error, :notice ].each do |kind| %>
+        <% if message = flash[kind].presence %>
+          <div id="flash">
+            <div id="<%= kind %>"><%= message %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <header id='page-header' class='full-viewport'>
       <div class='overlay full-viewport'>
         <div class='container_12'>

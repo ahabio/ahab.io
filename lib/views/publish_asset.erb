@@ -1,0 +1,39 @@
+<div class='container_12'>
+  <div id="register-assets" title="Publish Asset" style="display: none;">
+    <form action="/assets" method="POST">
+      <section class='asset-details full-viewport'>
+        <div class="container_12">
+          <div class="grid_6">
+            <h4>Details</h4>
+            <p>Fill out the following details about your asset</p>
+            <input class="text ui-widget-content ui-corner-all" id="asset_name" name="asset[name]" placeholder="Name" type="text">
+
+            <textarea name="asset[description]" rows="4" cols="50" placeholder="Description"></textarea>
+          </div>
+          <div class="grid_6">
+            <h4>Provide the Asset</h4>
+            <p>Provide a URL location or a file. We will fetch the assets directly</p>
+
+            <input type="file" name="asset[homepage]" id="version-name" class="text ui-widget-content ui-corner-all" placeholder="Version" />
+
+            <input type="text" name="asset[version]" id="version-name" class="text ui-widget-content ui-corner-all" placeholder="Version" />
+
+            <h4>Dependencies</h4>
+            <p>Define asset dependencies here. Hit return / enter to submit item.</p>
+
+            <input type="text" name="asset[dependencies]" id="version-dependencies" class="text ui-widget-content ui-corner-all" placeholder="Dependencies" />
+          </div>
+
+          <div class="grid_2 push_8">
+            <input type="button" value="Cancel">
+          </div>
+
+          <div class="grid_2 push_8">
+            <input type="submit" value="Publish" />
+          </div>
+
+        </div>
+      </section>
+    </form>
+  </div>
+</div>
