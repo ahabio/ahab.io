@@ -51,7 +51,7 @@ class AhabApplication < Sinatra::Base
         h['name'] = asset.name
         h['homepage'] = asset.homepage
         h['description'] = asset.description
-        h['version'] = asset.optimistic_version
+        h['version'] = asset.asset_versions.find_by :value => asset.optimistic_version
       end
       res << hash
     end
