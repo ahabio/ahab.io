@@ -7,6 +7,7 @@ require 'require_all'
 class AhabApplication < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   require_all 'lib/models'
+  require_all 'lib/helpers'
 
   set(:project_root)  { File.expand_path('../../', __FILE__) }
   set(:public_folder) { File.join(project_root, 'public') }
@@ -22,6 +23,8 @@ class AhabApplication < Sinatra::Base
   end
 
   use Honeybadger::Rack
+
+  helpers AssetHelpers
 
   get '/' do
     erb :index, layout: :desktop
