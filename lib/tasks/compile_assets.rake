@@ -36,7 +36,7 @@ namespace :assets do
   end
 
   asset_concatenation_task 'vendor.css', 'vendor/assets/960_12_col.css'
-  asset_concatenation_task 'vendor.js', *Dir.glob('vendor/assets/*.js')
+  asset_concatenation_task 'vendor.js', 'vendor/assets/jquery.min.js', 'vendor/assets/handlebars.min.js'
 
   def sass_task(name)
     infile  = "lib/assets/#{name}.scss"
