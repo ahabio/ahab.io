@@ -131,7 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 4.0.0)
-  ahab
+  ahab (~> 0.1)
   capistrano (~> 2.15)
   cucumber
   debugger
