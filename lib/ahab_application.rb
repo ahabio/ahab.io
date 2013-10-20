@@ -62,6 +62,14 @@ class AhabApplication < Sinatra::Base
     })
   end
 
+  get '/documentation' do
+    erb :desktop do
+      erb :documentation do
+        markdown :documentation
+      end
+    end
+  end
+
   get '/humans.txt' do
     content_type :txt
     erb :humans
