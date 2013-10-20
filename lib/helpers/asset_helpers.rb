@@ -21,9 +21,15 @@ module AssetHelpers
   end
 
   def asset_url(name)
-    "/#{name}"
+    "#{asset_url_prefix}#{name}"
   end
 
   alias_method :image_url, :asset_url
+
+  private
+
+  def asset_url_prefix
+    @asset_url_prefix ||= ( ENV['RACK_ENV'] == 'production' ? '//assets.ahab.io/' : '/' )
+  end
 
 end
