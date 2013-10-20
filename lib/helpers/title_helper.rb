@@ -1,5 +1,7 @@
 module TitleHelper
 
+  include AssetHelpers
+
   attr_accessor :page_title
 
   def head_title
@@ -10,7 +12,7 @@ module TitleHelper
 
   def site_title
     if show_header_title?
-      link = "<a href='/'>ahab.io</a>"
+      link = "<a href='/'>#{img 'moby2x.png'}</a>"
       "<h1 class='grid_2'>#{link}</h1>"
     else
       "<div class='grid_2'>&nbsp;</div>"
