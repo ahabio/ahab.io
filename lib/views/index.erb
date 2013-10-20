@@ -63,17 +63,7 @@
       </div>
       <div class="grid_3 feature">
         <h5>Popular</h5>
-        <ul>
-          <% popular_assets.each do |version| %>
-            <li>
-              <a href="<%= version.url %>">
-                <%= version.asset.name %>
-                <%= version.value %>
-              </a>
-            </li>
-          <% end %>
-          <li>See more...</li>
-        </ul>
+        <%= metadata_asset_list popular_assets %>
       </div>
       <div class="grid_3 feature">
         <h5>Most depended on</h5>

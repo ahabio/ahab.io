@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'htmlentities', '~> 4.2.2'
 gem 'rack', '~> 1.5.2'
 gem 'redcarpet', '~> 3.0.0'
 gem 'sass', '~> 3.2.12'
