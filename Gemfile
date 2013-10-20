@@ -11,17 +11,24 @@ gem 'mysql2'
 gem 'require_all', '~> 1.3.1'
 gem 'searchkick'
 
+group 'assets' do
+  gem 'rake', '~> 10.0'
+  gem 'ahab', '~> 0.1'
+end
+
 group 'development' do
   gem 'json'
   gem 'guard'
   gem 'guard-rake'
-  gem 'rake', '~> 10.0'
   gem 'pry'
 end
 
 group 'test' do
   gem 'rack-test'
   gem 'cucumber'
+  gem 'minitest', '~> 4.2'
+  gem 'minitest-colorize', '~> 0.0.5'
+  gem 'debugger'
 end
 
 group 'deployment' do
