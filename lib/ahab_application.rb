@@ -4,8 +4,6 @@ require 'sinatra/reloader' if development?
 require 'honeybadger'
 require 'require_all'
 
-ENV["ELASTICSEARCH_URL"] = "http://ahab.io:9200" if production?
-
 class AhabApplication < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   require_all 'lib/models'
@@ -39,7 +37,6 @@ class AhabApplication < Sinatra::Base
     offset = params[:offset] || 0
     limit = params[:limit] || 40
     query = params[:q] || ""
-    # found = Asset.search params[:q] || "", :limit => limit, :offset => offset, :partial => true
     assets = Asset.where("name like ?", "%#{query}%").limit(limit).offset(offset)
     res = []
     assets.each do |asset|
