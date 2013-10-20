@@ -1,17 +1,34 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/assetpack'
 require 'sinatra/reloader' if development?
 require 'honeybadger'
 require 'require_all'
 
 class AhabApplication < Sinatra::Base
   register Sinatra::ActiveRecordExtension
+  register Sinatra::AssetPack
+
   require_all 'lib/models'
 
-  set(:project_root)  { File.expand_path('../../', __FILE__) }
-  set(:public_folder) { File.join(project_root, 'public') }
-  set :database_file, File.join(project_root, 'config/database.yml')
-  set(:css_dir)       { public_folder }
+  set :root,          File.expand_path('../../', __FILE__)
+  set :public_folder, 'public'
+  set :database_file, File.join(root, 'config/database.yml')
+  set :css_dir,       'public'
+  set :views,         'lib/views'
+
+  assets {
+    serve '/assets/app/',    from: 'lib/assets'
+    serve '/assets/vendor/', from: 'vendor/assets'
+
+    css :vendor, '/assets/vendor/vendor.css', [
+      '**/*.css'
+    ]
+
+    css :application, '/assets/app/application.css', [
+      'application.css'
+    ]
+  }
 
   configure :development do
     register Sinatra::Reloader

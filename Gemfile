@@ -9,6 +9,7 @@ gem 'activerecord', '~> 4.0.0'
 gem 'sinatra-activerecord'
 gem 'mysql2'
 gem 'require_all', '~> 1.3.1'
+gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
 group 'assets' do
   gem 'rake', '~> 10.0'
