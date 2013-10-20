@@ -22,24 +22,26 @@ body {
   }
 }
 
+a {
+  text-decoration: underline;
+  &, &:hover, &:visited { color: $sea-blue; }
+}
+
 button, .btn {
   background-color: $peach;
   border-color: transparent;
   border-radius: 4px;
-  color: $white;
   cursor: pointer;
   outline: none;
   padding: 5px;
 
-  &:hover { text-decoration: none; }
+  &, &:visited { color: $white; }
+  &, &:hover { text-decoration: none; }
 }
 
 header, h1, h2, h3, h4, h5, h6 {
   color: $text-header-color;
 }
-
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
 
 p { line-height: 1.4em; }
 
