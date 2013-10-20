@@ -64,10 +64,14 @@
       <div class="grid_3 feature">
         <h5>Popular</h5>
         <ul>
-          <li>Test 0.01 by Godzilla</li>
-          <li>Little Icons 2.0.1 by Helvetica</li>
-          <li>Seedling 0.1.5 by Beta Blocks</li>
-          <li>Data-Tree 3.1.0 by Pixelbrain</li>
+          <% popular_assets.each do |version| %>
+            <li>
+              <a href="<%= version.url %>">
+                <%= version.asset.name %>
+                <%= version.value %>
+              </a>
+            </li>
+          <% end %>
           <li>See more...</li>
         </ul>
       </div>

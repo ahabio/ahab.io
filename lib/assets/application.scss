@@ -261,6 +261,9 @@ section.metadata {
       margin: 42px 0;
     }
 
+    a, a:visited { color: $white; }
+    a { text-decoration: none; }
+
     .feature {
       text-align: left;
 
