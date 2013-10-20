@@ -1,11 +1,7 @@
-require 'htmlentities'
-
 module HtmlHelper
 
-  CODER = HTMLEntities.new
-
-  def h(string)
-    CODER.encode(string)
+  def h(text)
+    Rack::Utils.escape_html(text)
   end
 
 end
