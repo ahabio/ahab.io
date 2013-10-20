@@ -10,7 +10,7 @@
     {
       "url": "http://code.jquery.com/jquery-2.0.3.min.map",
       "filename": "jquery.min.map"
-    }
+    },
     {
       "url": "http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"
     }
