@@ -35,6 +35,14 @@ header, h1, h2, h3, h4, h5, h6 {
   color: $text-header-color;
 }
 
+p { line-height: 1.4em; }
+
+h3, .call-to-action {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .line-on-sides {
   line-height: 0.5;
   text-align: center;
@@ -47,7 +55,7 @@ header, h1, h2, h3, h4, h5, h6 {
     &:after {
       content: "";
       position: absolute;
-      height: 4px;
+      height: 2px;
       border-bottom: 2px solid;
       top: 0;
       width: 370px;
@@ -87,6 +95,10 @@ header, h1, h2, h3, h4, h5, h6 {
 
     img { height: 1em; }
   }
+
+  button {
+    text-transform: capitalize;
+  }
 }
 
 #page-footer {
@@ -114,12 +126,7 @@ section.jumbotron {
     margin: 0;
   }
 
-  .hero {
-    .learn {
-      font-size: 21px;
-      margin-top: 20px;
-    }
-  }
+  .hero .learn { margin-top: 20px; }
 }
 
 section.target-audience {
