@@ -5,7 +5,7 @@ end
 Then /^the response headers should include an asset URL Link$/ do
   link = last_response.headers['Link']
   assert_not_nil link, 'Expected Link headers'
-  assert_match %r{rel="http://ahab.io/learn/x-asset-registry-uri"}, link
+  assert_match %r{rel="http://ahab.io/documentation/x-asset-registry-uri"}, link
 end
 
 Then /^the response status should be (\d+)$/ do |status|

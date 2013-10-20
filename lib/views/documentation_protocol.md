@@ -9,9 +9,9 @@ this well, and its behavior is a good starting place.
 Given the following `ahab.json` file
 
     {
-      "dependencies": {
-        "ember": "http://builds.emberjs.com/release/ember.js"
-      }
+      "assets": [
+        { "name": "ember": "url": http://builds.emberjs.com/release/ember.js" }
+      ]
     }
 
 running `ahab fetch` will put the contents of
@@ -31,9 +31,9 @@ Package managers like Rubgems, Bower, and NPM all allow symbolic lookup of
 packages based on a `name` and `version`. In Bower, the syntax is
 
     {
-      "dependencies": {
-        "ember": "1.0.0"
-      }
+      "assets": [
+        { "name": "ember", "version": "1.0.0" }
+      ]
     }
 
 This removes a hurdle for developers as they no longer have to go looking for
@@ -48,9 +48,10 @@ Given the following `ahab.json` file,
       "registries": [
         "https://cdnjs.cloudflare.com/ajax/libs/{name}/{version}/{name}.js"
       ],
-      "dependencies": {
-        "jquery": "2.0.1"
-      }
+
+      "assets": [
+        { "name": "jquery", "version": "2.0.1" }
+      ]
     }
 
 `ahab fetch` will put the contents of
@@ -67,11 +68,13 @@ global registries or set the URI template as the package's URL:
     {
       "registries": [
         "https://cdnjs.cloudflare.com/ajax/libs/{name}/{version}/{name}.js"
-        ],
-        "dependencies": {
-          "jquery": "2.0.1" // use the CDN.js registry,
+      ],
 
-          "ember": {
+      "assets": [
+          { "name": "jquery", "version": "2.0.1" } // use the cdnjs registry,
+
+          {
+            "name": "ember",
             "url": "http://builds.emberjs.com/tags/v{version}/ember.prod.js",
             "version": "1.0.0"
           }
@@ -87,10 +90,11 @@ Given the following `ahab.json` file
 
     {
       "registries": [
-        "https://ahab.io/assets"
+        "https://ahab.io"
       ],
-      "dependencies": [
-        "jquery": "2.0.1"
+
+      "assets": [
+        { "name": "jquery", "version": "2.0.1" }
       ]
     }
 
@@ -98,8 +102,8 @@ Given the following `ahab.json` file
 
  1. determine that the registry URI does not have the required URI template
     parameters
- 1. make a `HEAD` request to `https://ahab.io/assets`
- 1. look for a `Link rel="ahab-uri-template"` header
+ 1. make an `OPTIONS` request to `https://ahab.io`
+ 1. look for a `Link rel="http://ahab.io/documentation/x-asset-registry-uri"` header
  1. if the header is found, use its content as the registry URI template
  1. if the header is not found, print a warning that the registry is incomplete
 
