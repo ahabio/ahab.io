@@ -4,25 +4,7 @@
     <link rel='dns-prefetch' href='//assets.ahab.io'>
     <%= css :vendor %>
     <%= css :application %>
-    <%= js :vendor %>
-    <%= js :application %>
     <%= head_title %>
-
-    <script>
-    jQuery(function() {
-      jQuery(".publish").click(function() {
-        jQuery("#register-assets").dialog({
-          position: {my: "top", at: "top", of: window},
-          width: 'auto',
-          modal: true
-        });
-      });
-      $('#close_modal').on("click", function() {
-        //Close the dialog
-        $("#register-assets").dialog("close");
-      });
-    });
-    </script>
   </head>
 
   <body>
@@ -48,7 +30,7 @@
 
           <div class='search grid_5'>
             <img src='/search_glass2x.png' />
-            <input type='search' placeholder='Search libraries and assets' />
+            <input type='search' incremental="true" placeholder='Search libraries and assets' />
           </div>
 
           <%= site_title %>
@@ -67,24 +49,7 @@
           <div class="close push_5 grid_1"><a href="#">X</a></div>
         </div>
       </header>
-      <section class="search-body">
-        <div class="asset-results container_12">
-          <div class="grid_10 push_1">
-            <ul>
-              <li>
-                <h4>Javascript Boneyard 0.0.1.6</h4>
-                <h5>Published by Boneyard</h5>
-                <p>A Javascript library for creating beautifully simple interfaces...</p>
-              </li>
-              <li>
-                <h4>Javascript Boneyard 0.0.1.6</h4>
-                <h5>Published by Boneyard</h5>
-                <p>A Javascript library for creating beautifully simple interfaces...</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <section class="search-body"></section>
       <footer class="search-footer">
         <div class="container_12">
           <div class="grid_12">
@@ -109,5 +74,26 @@
         </div>
       </div>
     </footer>
+
+    <script id="search-results-tpl" type="text/x-handlebars-template">
+      <div class="asset-results container_12">
+        <div class="grid_10 push_1">
+          <ul>
+            {{#results}}
+              <li>
+                <a href="#">
+                  <h4>{{name}} {{version}}</h4>
+                  <h5>{{website}}</h5>
+                  <p>{{description}}</p>
+                </a>
+              </li>
+            {{/results}}
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <%= js :vendor %>
+    <%= js :application %>
   </body>
 </html>

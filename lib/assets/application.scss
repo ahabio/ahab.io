@@ -177,6 +177,10 @@ h3, .call-to-action {
       li {
         border-bottom: 1px solid $light-grey;
 
+        a, a:hover {
+          text-decoration: none;
+        }
+
         h4 {
           margin: 10px 0;
         }
