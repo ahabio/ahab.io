@@ -32,9 +32,9 @@ namespace :import do
     end
   end
 
-  def libraries
+  def libraries(from_index, count)
     client = Typhoeus::Hydra.new(max_concurrency: 8)
-    list_libraries.tap do |libs|
+    list_libraries.slice(from_index, count || libs.length).tap do |libs|
       puts "Importing #{libs.length} libraries"
       libs.each do |library|
         client.queue fetch_library_info(library)
@@ -76,8 +76,10 @@ namespace :import do
   end
 
   desc 'Import Libraries from cdnjs.com'
-  task :from_cdnjs => :require do
-    libraries.each(&:import!)
+  task :from_cdnjs, [ :from_index, :count ] => :require do |task, args|
+    from_index = args[:from_index].try(:to_i) || 0
+    count = args[:count].try(:to_i)
+    libraries(from_index, count).each(&:import!)
   end
 
 end
