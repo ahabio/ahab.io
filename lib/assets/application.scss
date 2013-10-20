@@ -1,13 +1,14 @@
 $background-color: #fff;
 $text-body-color: #333;
 $text-header-color: $text-body-color;
-
 $sea-blue: hsl(217, 58, 29);
 $shoal-blue: hsla(hue($sea-blue), saturation($sea-blue), lightness($sea-blue), 0.84);
 $peach: hsl(27, 57, 72);
 $white: #fff;
+$very-light-grey: #dfdfdf;
 $light-grey: #a8a8a8;
 $medium-grey: #888;
+$blue-grey: #b9bfc8;
 
 body {
   background-color: $background-color;
@@ -21,24 +22,26 @@ body {
   }
 }
 
+a {
+  text-decoration: underline;
+  &, &:hover, &:visited { color: $sea-blue; }
+}
+
 button, .btn {
   background-color: $peach;
   border-color: transparent;
   border-radius: 4px;
-  color: $white;
   cursor: pointer;
   outline: none;
   padding: 5px;
 
-  &:hover { text-decoration: none; }
+  &, &:visited { color: $white; }
+  &, &:hover { text-decoration: none; }
 }
 
 header, h1, h2, h3, h4, h5, h6 {
   color: $text-header-color;
 }
-
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
 
 p { line-height: 1.4em; }
 
@@ -81,17 +84,30 @@ h3, .call-to-action {
   background-color: $shoal-blue;
   padding: 12px 0;
 
-  .search input, .search img, button {
-    font-size: 16px;
+  * {
     vertical-align: middle;
   }
 
+  .vote-in-rails-rumble {
+    color: $very-light-grey;
+    a {
+      text-decoration: none;
+      vertical-align: baseline;
+      &, &:visited { color: $peach; }
+    }
+  }
+
+  .search input, button { font-size: 16px; }
+
+  .search input, h1 a, h1 a:hover, h1 a:visited, button { color: $white; }
+
   .search {
+    text-align: left;
+
     input {
       background-color: transparent;
       border: 2px solid transparent;
       border-radius: 10px;
-      color: $white;
 
       outline: none;
       padding: 5px 0;
@@ -100,6 +116,14 @@ h3, .call-to-action {
 
     img { height: 1em; }
   }
+
+  h1 {
+    font-size: 22px;
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  a:hover { text-decoration: none; }
 
   button {
     text-transform: capitalize;
@@ -205,6 +229,8 @@ section.target-audience {
   }
 
   h4 {
+    color: #1f4075;
+    font-size: 20px;
     margin-bottom: 5px;
   }
 
@@ -263,4 +289,213 @@ section.stats {
   color: $white;
   padding: 16px 0;
   text-transform: uppercase;
+}
+
+.documentation {
+  padding-top: 10px;
+
+  .docs-header {
+    border-bottom: 3px solid $very-light-grey;
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+    vertical-align: middle;
+
+    .back {
+      cursor: pointer;
+      height: 60px;
+      width: 20px;
+      position: absolute;
+      left: -30px;
+
+      img {
+        width: 10px;
+        height: 19px;
+        margin-top: 20px;
+      }
+    }
+
+    h1 {
+      display: inline;
+    }
+
+    .docs-for {
+      text-align: right;
+
+      a {
+        border-radius: 4px;
+        padding: 10px 12px;
+        cursor: pointer;
+        color: $shoal-blue;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.active {
+          background-color: $shoal-blue;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .docs-body {
+    .docs-links {
+      background: #eeeeee;
+      border: 1px solid $light-grey;
+      border-radius: 4px;
+      display: none; // until filled in by JS
+      padding: 10px;
+      margin-top: 55px;
+
+      a {
+        $x-padding: 10px;
+
+        border-radius: 2px;
+        color: $sea-blue;
+        display: block;
+        padding: 5px $x-padding;
+
+        &, &:hover { text-decoration: none; }
+        &.active, &:hover { background-color: $very-light-grey; }
+        &.active { font-weight: 700; }
+
+        &:not(:first-of-type) { margin-top: 2px; }
+
+        &.h3 {
+          font-size: 0.9em;
+          padding-left: $x-padding + 5px;
+          padding-right: $x-padding + 5px;
+        }
+      }
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: $sea-blue;
+    }
+
+    h3 { text-transform: none; }
+
+    pre {
+      display: block;
+      background-color: #eee;
+      border: 1px solid $very-light-grey;
+      border-radius: 4px;
+      overflow: auto;
+      padding: 10px;
+    }
+  }
+}
+
+#register-assets {
+  background-color: $white;
+  p {
+    font-size: 14px;
+  }
+}
+
+.form_buttons {
+  margin-top: 25px;
+  left: 170px;
+}
+
+#asset_form {
+  text-align: left;
+  border-radius: 4px;
+
+  h4 {
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 2px;
+    padding-right: 50px;
+  }
+
+  input[type=text] {
+    width: 90%;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  #cancel {
+    left: 240;
+  }
+
+  input[type="button"], input[type="submit"] {
+    border-radius: 4px;
+    text-decoration: none;
+    border:none;
+    font-size: 13px;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  input[type="button"] {
+    background-color: $white;
+    color: $light-grey;
+  }
+
+  input[type="submit"] {
+    background-color: $peach;
+    color: $white;
+  }
+
+  textarea {
+    border-radius: 4px;
+    border: 1px solid #aaaaaa;
+    width: 90%;
+    height: 225px;
+    resize: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+}
+
+#author {
+  background-color: $blue-grey;
+  height: 40px;
+  text-align: left;
+  margin-top: -27px;
+  padding-left: 10px;
+
+  p {
+    color: $sea-blue;
+    line-height: 300%;
+  }
+}
+
+/*
+  Overwrites JQuery CSS
+*/
+
+.ui-dialog {
+  padding: 0px;
+  border-radius: 6px;
+}
+
+.ui-widget-header {
+  background: $white;
+  border: none;
+  border-bottom: 6px solid $sea-blue;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.ui-dialog .ui-dialog-title {
+  width: auto;
+}
+
+.ui-dialog .ui-dialog-content {
+  padding: .5em 0px .5em;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: none;
+  background: $white;
 }

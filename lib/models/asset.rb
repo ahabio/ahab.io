@@ -7,6 +7,10 @@ class Asset < ActiveRecord::Base
 
   searchkick
 
+  def self.total_with_format
+    Asset.count.to_s.gsub(/(\d)(?=(\d\d\d)+(?!\d))/, "\\1,")
+  end
+
   def optimistic_version( requested = nil)
     version = if requested.blank?
       sorted_versions.last

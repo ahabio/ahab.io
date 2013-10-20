@@ -35,8 +35,9 @@ namespace :assets do
     task :compile => concatenation_task
   end
 
-  asset_concatenation_task 'vendor.css', 'vendor/assets/960_12_col.css'
-  asset_concatenation_task 'vendor.js', 'vendor/assets/jquery.min.js', 'vendor/assets/handlebars.min.js'
+  asset_concatenation_task 'vendor.css', 'vendor/assets/960_12_col.css', 'vendor/assets/jquery-ui.css'
+  asset_concatenation_task 'vendor.js', 'vendor/assets/jquery.min.js', 'vendor/assets/handlebars.min.js', 'vendor/assets/jquery-ui.min.js'
+  asset_concatenation_task 'jquery.min.map', 'vendor/assets/jquery.min.map'
 
   def sass_task(name)
     infile  = "lib/assets/#{name}.scss"

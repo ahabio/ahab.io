@@ -4,17 +4,38 @@
     <link rel='dns-prefetch' href='//assets.ahab.io'>
     <%= css :vendor %>
     <%= css :application %>
+    <%= head_title %>
   </head>
 
   <body>
+    <%= erb :publish_asset %>
+    <div id="flash_messages">
+      <% [ :error, :notice ].each do |kind| %>
+        <% if message = flash[kind].presence %>
+          <div id="flash">
+            <div id="<%= kind %>"><%= message %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <header id='page-header' class='full-viewport'>
       <div class='overlay full-viewport'>
         <div class='container_12'>
-          <div class='search push_1 grid_5'>
+          <div class='vote-in-rails-rumble push_3 grid_6 suffix_3'>
+            You can
+            <a class='vote' href='http://railsrumble.com'>vote for us</a>
+            in the
+            <a class='rumble' href='http://railsrumble.com'>2013 Rails Rumble</a>!
+          </div>
+
+          <div class='search grid_5'>
             <img src='/search_glass2x.png' />
             <input type='search' incremental="true" placeholder='Search libraries and assets' />
           </div>
-          <button class='publish call-to-action push_4 grid_2'>Publish Asset</button>
+
+          <%= site_title %>
+
+          <button class='publish call-to-action push_2 grid_3'>Publish Asset</button>
         </div>
       </div>
     </header>
