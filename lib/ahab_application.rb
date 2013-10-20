@@ -96,6 +96,10 @@ class AhabApplication < Sinatra::Base
     erb :humans
   end
 
+  get '/*' do
+    erb :not_found, layout: :desktop
+  end
+
   private
 
   def initialize_asset(params)

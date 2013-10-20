@@ -9,6 +9,7 @@ $very-light-grey: #dfdfdf;
 $light-grey: #a8a8a8;
 $medium-grey: #888;
 $blue-grey: #b9bfc8;
+$min-main-height: 400px;
 
 body {
   background-color: $background-color;
@@ -131,7 +132,7 @@ h3, .call-to-action {
 }
 
 #main {
-  min-height: 300px;
+  min-height: $min-main-height;
   text-align: left;
 }
 
@@ -467,6 +468,24 @@ section.stats {
   p {
     color: $sea-blue;
     line-height: 300%;
+  }
+}
+
+#error-404-not-found {
+  $padding-top: 100px;
+  background-color: $sea-blue;
+  min-height: $min-main-height - $padding-top;
+  padding-top: $padding-top;
+
+  &, h1 { color: $very-light-grey; }
+
+  p + p { margin-top: 0; }
+
+  a, a:visited { color: $peach; }
+
+  img {
+    margin-top: 32px;
+    width: 360px;
   }
 }
 
