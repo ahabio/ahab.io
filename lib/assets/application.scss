@@ -68,27 +68,24 @@ header, h1, h2, h3, h4, h5, h6 {
   background-color: $shoal-blue;
   padding: 12px 0;
 
-  .search, button {
+  .search input, .search img, button {
     font-size: 16px;
     vertical-align: middle;
   }
 
   .search {
-    background-color: transparent;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    color: $light-grey;
-    margin: 2px 0;
-    outline: none;
-    padding: 5px 8px;
+    input {
+      background-color: transparent;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      color: $light-grey;
 
-    &:hover {
-      border-color: $medium-grey;
+      outline: none;
+      padding: 5px 0;
+      width: 320px;
     }
 
-    &:focus {
-      border-color: $light-grey;
-    }
+    img { height: 1em; }
   }
 }
 
