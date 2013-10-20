@@ -76,6 +76,8 @@ class AhabApplication < Sinatra::Base
       erb :documentation do
         markdown :documentation
       end
+    end
+  end
 
   post '/assets' do
     @asset = initialize_asset(params[:asset])
@@ -85,7 +87,7 @@ class AhabApplication < Sinatra::Base
     else
       #TODO: Be more specific about the error
       flash[:error] = "There was an error while saving"
-      redirect request.url
+      redirect '/'
     end
   end
 

@@ -3,17 +3,15 @@
     <meta http-equiv='x-dns-prefetch-control' content='on'>
     <link rel='dns-prefetch' href='//assets.ahab.io'>
     <%= css :vendor %>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <%= css :application %>
+    <%= js :vendor %>
+    <%= js :application %>
     <%= head_title %>
 
-    <script src='http://code.jquery.com/jquery-1.9.1.js'></script>
-    <script src='http://code.jquery.com/ui/1.10.3/jquery-ui.js'></script>
-
     <script>
-    $(function() {
-      $("#publish-asset").click(function() {
-        $("#register-assets").dialog({
+    jQuery(function() {
+      jQuery(".publish").click(function() {
+        jQuery("#register-assets").dialog({
           position: {my: "top", at: "top", of: window},
           width: 'auto',
           modal: true
@@ -111,8 +109,5 @@
         </div>
       </div>
     </footer>
-
-    <%= js :vendor %>
-    <%= js :application %>
   </body>
 </html>

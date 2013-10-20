@@ -287,7 +287,6 @@ section.stats {
   text-transform: uppercase;
 }
 
-<<<<<<< HEAD
 .documentation {
   padding-top: 10px;
 
@@ -383,13 +382,13 @@ section.stats {
       padding: 10px;
     }
   }
+}
 
 #register-assets {
   background-color: $white;
   p {
     font-size: 14px;
   }
-
 }
 
 .form_buttons {
@@ -460,10 +459,10 @@ section.stats {
   text-align: left;
   margin-top: -27px;
   padding-left: 10px;
-  line-height: 250%;
 
   p {
     color: $sea-blue;
+    line-height: 300%;
   }
 }
 
