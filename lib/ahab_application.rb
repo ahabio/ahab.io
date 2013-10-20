@@ -95,7 +95,8 @@ class AhabApplication < Sinatra::Base
     erb :humans
   end
 
-  get '/*' do
+  not_found do
+    status 404
     erb :not_found, layout: :desktop
   end
 
