@@ -2,8 +2,8 @@
   <head>
     <meta http-equiv='x-dns-prefetch-control' content='on'>
     <link rel='dns-prefetch' href='//assets.ahab.io'>
-    <link href='/vendor.css' rel='stylesheet' type='text/css'>
-    <link href='/application.css' rel='stylesheet' type='text/css'>
+    <%= css :vendor %>
+    <%= css :application %>
   </head>
 
   <body>
@@ -23,7 +23,7 @@
     <footer id='page-footer' class="full-viewport">
       <div class="container_12">
         <div class="grid_6 push_3 suffix_3">
-          <img src="/moby2x.png">
+          <%= img 'moby2x.png' %>
         </div>
         <div class='grid_6 push_3 suffix_3'>
           RailsRumble 2013 project by
