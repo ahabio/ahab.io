@@ -10,6 +10,8 @@ $light-grey: #a8a8a8;
 $medium-grey: #888;
 $blue-grey: #b9bfc8;
 $min-main-height: 400px;
+$grass-green: #00af10;
+$rust-red: #c55200;
 
 body {
   background-color: $background-color;
@@ -486,6 +488,23 @@ section.stats {
   img {
     margin-top: 32px;
     width: 360px;
+  }
+}
+
+#flash {
+  color: $white;
+  font-size: 13px;
+
+  #error {
+    background-color: $rust-red;
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+  }
+
+  #notice {
+    background-color: $grass-green;
+    height: 30px;
+    line-height: 30px;
   }
 }
 

@@ -102,12 +102,12 @@ class AhabApplication < Sinatra::Base
   private
 
   def initialize_asset(params)
-    asset = Asset.new(
-      :name => params[:name],
-      :homepage => params[:name],
-      :description => params[:description]
+    asset = Asset.find_or_initialize_by(name: params[:name])
+    asset.description = params[:description]
+    asset.asset_versions.build(
+      :value => params[:version],
+      :url   => params[:url]
     )
-    asset.asset_versions.build(:value => params[:version])
     asset
   end
 end
