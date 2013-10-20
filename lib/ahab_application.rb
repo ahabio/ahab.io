@@ -82,10 +82,10 @@ class AhabApplication < Sinatra::Base
   get '/assets/:name/:version' do
     asset = Asset.find_by name: params[:name]
     raise Sinatra::NotFound unless asset
-    version = asset.asset_versions.find_by value: params[:version]
-    raise Sinatra::NotFound unless version
-
-    redirect version.url, 302
+    version = asset.optimistic_version params[:version]
+    asset_version = asset.asset_versions.find_by value: version
+    raise Sinatra::NotFound unless asset_version
+    redirect asset_version.url, 302
   end
 
   post '/assets' do
@@ -107,6 +107,10 @@ class AhabApplication < Sinatra::Base
   not_found do
     status 404
     erb :not_found, layout: :desktop
+  end
+
+  error Asset::NoVersionAvailable do
+    raise Sinatra::NotFound
   end
 
   private
