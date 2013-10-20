@@ -392,7 +392,6 @@ section.stats {
 }
 
 #register-assets {
-  background-color: $white;
   p {
     font-size: 14px;
   }
@@ -404,11 +403,24 @@ section.stats {
 }
 
 #asset_form {
+  font-family: "Helvetice Neue", "Helvetica", sans-serif;
   text-align: left;
   border-radius: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: inherit;
 
   h4 {
     margin-bottom: 0px;
+  }
+
+  #details {
+    margin-right: 0px;
+  }
+
+  #url_dependencies {
+    margin-right: 0px;
+    margin-left: 0px;
   }
 
   p {
@@ -512,9 +524,20 @@ section.stats {
   Overwrites JQuery CSS
 */
 
+.ui-widget {
+  font-family: "Helvetice Neue", "Helvetica", sans-serif;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  background: white;
+  border: none;
+}
+
 .ui-dialog {
   padding: 0px;
-  border-radius: 6px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .ui-widget-header {
@@ -531,9 +554,4 @@ section.stats {
 
 .ui-dialog .ui-dialog-content {
   padding: .5em 0px .5em;
-}
-
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: none;
-  background: $white;
 }
