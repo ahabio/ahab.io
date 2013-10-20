@@ -79,6 +79,15 @@ class AhabApplication < Sinatra::Base
     end
   end
 
+  get '/assets/:name/:version' do
+    asset = Asset.find_by name: params[:name]
+    raise Sinatra::NotFound unless asset
+    version = asset.asset_versions.find_by value: params[:version]
+    raise Sinatra::NotFound unless version
+
+    redirect version.url, 302
+  end
+
   post '/assets' do
     @asset = initialize_asset(params[:asset])
     if @asset.save

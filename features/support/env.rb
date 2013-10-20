@@ -13,3 +13,8 @@ module ApiSupport
 end
 
 World(ApiSupport)
+
+Before do
+  AssetVersion.destroy_all
+  Asset.destroy_all
+end
