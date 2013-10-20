@@ -3,10 +3,10 @@
     <meta http-equiv='x-dns-prefetch-control' content='on'>
     <link rel='dns-prefetch' href='//assets.ahab.io'>
     <%= css :vendor %>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <%= css :application %>
     <%= head_title %>
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src='http://code.jquery.com/jquery-1.9.1.js'></script>
     <script src='http://code.jquery.com/ui/1.10.3/jquery-ui.js'></script>
 
@@ -18,6 +18,10 @@
           width: 'auto',
           modal: true
         });
+      });
+      $('#close_modal').on("click", function() {
+        //Close the dialog
+        $("#register-assets").dialog("close");
       });
     });
     </script>
