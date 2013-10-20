@@ -4,12 +4,19 @@
       "url": "https://raw.github.com/nathansmith/960-Grid-System/master/code/css/960_12_col.css"
     },
     {
+      "url": "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
+    },
+    {
       "url": "http://code.jquery.com/jquery-2.0.3.min.js",
       "filename": "jquery.min.js"
     },
     {
       "url": "http://code.jquery.com/jquery-2.0.3.min.map",
       "filename": "jquery.min.map"
+    },
+    {
+      "url": "http://code.jquery.com/ui/1.10.3/jquery-ui.min.js",
+      "filename": "jquery-ui.min.js"
     },
     {
       "url": "http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"
