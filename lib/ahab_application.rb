@@ -62,7 +62,7 @@ class AhabApplication < Sinatra::Base
     body ''
     status 204
 
-    link_uri_template = '//cdnjs.com/assets/<name>/<version>/<filename>'
+    link_uri_template = '//cdnjs.com/assets/<name>/<version>'
     link_rel_info     = 'http://ahab.io/learn/x-asset-registry-uri'
 
     headers({
