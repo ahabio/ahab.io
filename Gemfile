@@ -21,6 +21,9 @@ end
 group 'test' do
   gem 'rack-test'
   gem 'cucumber'
+  gem 'minitest', '~> 4.2'
+  gem 'minitest-colorize', '~> 0.0.5'
+  gem 'debugger'
 end
 
 group 'deployment' do
