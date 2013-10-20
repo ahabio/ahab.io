@@ -62,7 +62,7 @@ class AhabApplication < Sinatra::Base
     body ''
     status 204
 
-    link_uri_template = '//cdnjs.com/assets/<name>/<version>/<filename>'
+    link_uri_template = '//cdnjs.com/assets/<name>/<version>'
     link_rel_info     = 'http://ahab.io/learn/x-asset-registry-uri'
 
     headers({
@@ -77,6 +77,15 @@ class AhabApplication < Sinatra::Base
         markdown :documentation
       end
     end
+  end
+
+  get '/assets/:name/:version' do
+    asset = Asset.find_by name: params[:name]
+    raise Sinatra::NotFound unless asset
+    version = asset.optimistic_version params[:version]
+    asset_version = asset.asset_versions.find_by value: version
+    raise Sinatra::NotFound unless asset_version
+    redirect asset_version.url, 302
   end
 
   post '/assets' do
@@ -95,8 +104,13 @@ class AhabApplication < Sinatra::Base
     erb :humans
   end
 
-  get '/*' do
+  not_found do
+    status 404
     erb :not_found, layout: :desktop
+  end
+
+  error Asset::NoVersionAvailable do
+    raise Sinatra::NotFound
   end
 
   private

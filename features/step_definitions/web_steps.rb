@@ -2,11 +2,6 @@ Given(/^I am on the home page$/) do
   get '/'
 end
 
-Given(/^the following assets exist:$/) do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
-end
-
 When(/^I search for "(.*?)"$/) do |arg1|
   pending # express the regexp above with the code you wish you had
 end
