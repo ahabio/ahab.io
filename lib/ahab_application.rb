@@ -34,6 +34,7 @@ class AhabApplication < Sinatra::Base
 
   helpers AssetHelpers
   helpers TitleHelper
+  helpers IndexHelper
 
   get '/' do
     no_header_title!
