@@ -28,6 +28,7 @@ namespace :assets do
 
     concatenation_task = file(task_name => infiles) do |task|
       quoted_infile_list = infiles.map { |f| "\"#{f}\"" }.join(' ')
+      puts quoted_infile_list
       sh "cat #{quoted_infile_list} > #{task.name}"
     end
 
@@ -35,7 +36,7 @@ namespace :assets do
   end
 
   asset_concatenation_task 'vendor.css', 'vendor/assets/960_12_col.css'
-  asset_concatenation_task 'vendor.js', 'vendor/assets/jquery.min.js'
+  asset_concatenation_task 'vendor.js', *Dir.glob('vendor/assets/*.js')
 
   def sass_task(name)
     infile  = "lib/assets/#{name}.scss"
