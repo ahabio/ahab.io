@@ -14,6 +14,8 @@ class AhabApplication < Sinatra::Base
   set :database_file, File.join(project_root, 'config/database.yml')
   set(:css_dir)       { public_folder }
 
+  set :static_cache_control, [ :public, :max_age => 300 ]
+
   configure :development do
     register Sinatra::Reloader
   end
