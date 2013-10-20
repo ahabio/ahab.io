@@ -71,11 +71,19 @@ class AhabApplication < Sinatra::Base
   end
 
   get '/documentation' do
-    self.page_title = 'Documentation'
-    erb :desktop do
-      erb :documentation do
-        markdown :documentation
+    redirect '/documentation/overview'
+  end
+
+  get '/documentation/:page' do
+    begin
+      self.page_title = 'Documentation'
+      erb :desktop do
+        erb :documentation do
+          markdown "documentation_#{params[:page]}".to_sym
+        end
       end
+    rescue Errno::ENOENT
+      pass
     end
   end
 
