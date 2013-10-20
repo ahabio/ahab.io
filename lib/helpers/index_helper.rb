@@ -32,4 +32,8 @@ EOT
       compact.
       slice(0, 5)
   end
+
+  def recently_updated_assets
+    AssetVersion.all.order('id desc').limit(5)
+  end
 end

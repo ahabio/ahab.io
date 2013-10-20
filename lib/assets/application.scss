@@ -252,6 +252,9 @@ section.metadata {
     margin-top: $vertical-padding 0 $vertical-padding;
   }
 
+  a, a:visited { color: $white; }
+  a { text-decoration: none; }
+
   .featured-assets {
     background: rgba(255, 255, 255, 0.15);
     color: $white;
@@ -261,9 +264,6 @@ section.metadata {
       color: rgba(255, 255, 255, 0.25);
       margin: 42px 0;
     }
-
-    a, a:visited { color: $white; }
-    a { text-decoration: none; }
 
     .feature {
       text-align: left;
