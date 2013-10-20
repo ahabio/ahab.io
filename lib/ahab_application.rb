@@ -24,7 +24,7 @@ class AhabApplication < Sinatra::Base
   use Honeybadger::Rack
 
   get '/' do
-    erb :index
+    erb :index, layout: :desktop
   end
 
   get '/search.json' do
