@@ -19,7 +19,6 @@ GEM
     ahab (0.1.0)
       multi_json
       typhoeus
-    ansi (1.4.3)
     arel (4.0.0)
     atomic (1.1.14)
     backports (3.3.5)
@@ -63,7 +62,6 @@ GEM
     guard-rake (0.0.9)
       guard
       rake
-    hashr (0.0.22)
     highline (1.6.20)
     honeybadger (1.8.1)
       json
@@ -107,12 +105,7 @@ GEM
       ffi (>= 0.5.0)
     redcarpet (3.0.0)
     require_all (1.3.1)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     sass (3.2.12)
-    searchkick (0.2.8)
-      tire
-      tire-contrib
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -135,16 +128,6 @@ GEM
       atomic
     tilt (1.4.1)
     timers (1.1.0)
-    tire (0.6.1)
-      activemodel (>= 3.0)
-      activesupport
-      ansi
-      hashr (~> 0.0.19)
-      multi_json (~> 1.3)
-      rake
-      rest-client (~> 1.6)
-    tire-contrib (0.1.3)
-      tire
     typhoeus (0.6.5)
       ethon (~> 0.6.1)
     tzinfo (0.3.38)
@@ -173,7 +156,6 @@ DEPENDENCIES
   redcarpet (~> 3.0.0)
   require_all (~> 1.3.1)
   sass (~> 3.2.12)
-  searchkick
   sinatra (~> 1.4.3)
   sinatra-activerecord
   sinatra-contrib (~> 1.4.1)
