@@ -85,8 +85,7 @@ class AhabApplication < Sinatra::Base
       flash[:notice] = "#{@asset.name} was successfully saved"
       redirect '/'
     else
-      #TODO: Be more specific about the error
-      flash[:error] = "There was an error while saving"
+      flash[:error] = "There was an error while saving: </br>" << @asset.errors.full_messages.join("</br>")
       redirect '/'
     end
   end
