@@ -16,6 +16,7 @@ group 'development' do
   gem 'guard-rake'
   gem 'rake', '~> 10.0'
   gem 'pry'
+  gem 'ahab'
 end
 
 group 'test' do
