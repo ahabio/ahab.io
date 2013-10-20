@@ -3,9 +3,13 @@ require 'sinatra/activerecord'
 require 'sinatra/reloader' if development?
 require 'honeybadger'
 require 'require_all'
+require 'sinatra/flash'
 
 class AhabApplication < Sinatra::Base
-  register Sinatra::ActiveRecordExtension
+  enable    :sessions
+  register  Sinatra::ActiveRecordExtension
+  register  Sinatra::Flash
+
   require_all 'lib/models'
   require_all 'lib/helpers'
 
@@ -27,8 +31,11 @@ class AhabApplication < Sinatra::Base
   use Honeybadger::Rack
 
   helpers AssetHelpers
+  helpers TitleHelper
+  helpers IndexHelper
 
   get '/' do
+    no_header_title!
     erb :index, layout: :desktop
   end
 
@@ -64,6 +71,7 @@ class AhabApplication < Sinatra::Base
   end
 
   get '/documentation' do
+    self.page_title = 'Documentation'
     erb :desktop do
       erb :documentation do
         markdown :documentation
@@ -71,8 +79,31 @@ class AhabApplication < Sinatra::Base
     end
   end
 
+  post '/assets' do
+    @asset = initialize_asset(params[:asset])
+    if @asset.save
+      flash[:notice] = "#{@asset.name} was successfully saved"
+      redirect '/'
+    else
+      flash[:error] = "There was an error while saving: </br>" << @asset.errors.full_messages.join("</br>")
+      redirect '/'
+    end
+  end
+
   get '/humans.txt' do
     content_type :txt
     erb :humans
+  end
+
+  private
+
+  def initialize_asset(params)
+    asset = Asset.new(
+      :name => params[:name],
+      :homepage => params[:name],
+      :description => params[:description]
+    )
+    asset.asset_versions.build(:value => params[:version])
+    asset
   end
 end

@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131019225324) do
+ActiveRecord::Schema.define(version: 20131020192100) do
 
   create_table "asset_versions", force: true do |t|
     t.string  "value",    null: false
     t.integer "asset_id", null: false
+    t.string  "url",      null: false
   end
 
   create_table "assets", force: true do |t|
     t.string "name",        null: false
     t.string "homepage"
-    t.string "description"
+    t.text   "description"
   end
+
 end
