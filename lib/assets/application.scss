@@ -6,6 +6,7 @@ $sea-blue: hsl(217, 58, 29);
 $shoal-blue: hsla(hue($sea-blue), saturation($sea-blue), lightness($sea-blue), 0.84);
 $peach: hsl(27, 57, 72);
 $white: #fff;
+$very-light-grey: #dfdfdf;
 $light-grey: #a8a8a8;
 $medium-grey: #888;
 
@@ -90,6 +91,8 @@ h3, .call-to-action {
   .search input, h1 a, h1 a:hover, h1 a:visited, button { color: $white; }
 
   .search {
+    text-align: left;
+
     input {
       background-color: transparent;
       border: 2px solid transparent;
@@ -269,4 +272,107 @@ section.stats {
   color: $white;
   padding: 16px 0;
   text-transform: uppercase;
+}
+
+.documentation {
+  padding-top: 10px;
+
+  .docs-header {
+    border-bottom: 3px solid $very-light-grey;
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+    vertical-align: middle;
+
+    .back {
+      cursor: pointer;
+      height: 60px;
+      width: 20px;
+      position: absolute;
+      left: -30px;
+
+      img {
+        width: 10px;
+        height: 19px;
+        margin-top: 20px;
+      }
+    }
+
+    h1 {
+      display: inline;
+    }
+
+    .docs-for {
+      text-align: right;
+
+      a {
+        border-radius: 4px;
+        padding: 10px 12px;
+        cursor: pointer;
+        color: $shoal-blue;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.active {
+          background-color: $shoal-blue;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .docs-body {
+    .docs-links {
+      background: #eeeeee;
+      border: 1px solid $light-grey;
+      border-radius: 4px;
+      margin-top: 55px;
+
+      ul {
+        margin: 0;
+        padding: 12px;
+        list-style: none;
+
+        li {
+          height: 30px;
+          box-sizing: border-box;
+          line-height: 30px;
+          margin-bottom: 2px;
+          padding: 0 10px;
+          cursor: pointer;
+
+          a {
+            color: $sea-blue;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          &.active, &:hover {
+            background-color: $very-light-grey;
+          }
+
+          &.active {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    h1, h2, h3, h4, h5 {
+      color: $sea-blue;
+    }
+
+    pre {
+      display: block;
+      background-color: #eee;
+      border: 1px solid $very-light-grey;
+      border-radius: 4px;
+      overflow: auto;
+      padding: 10px;
+    }
+  }
 }
