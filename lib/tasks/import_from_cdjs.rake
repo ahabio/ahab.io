@@ -33,7 +33,7 @@ namespace :import do
   end
 
   def libraries
-    client = Typhoeus::Hydra.new(max_concurrency: 4)
+    client = Typhoeus::Hydra.new(max_concurrency: 8)
     list_libraries.tap do |libs|
       puts "Importing #{libs.length} libraries"
       libs.each do |library|
