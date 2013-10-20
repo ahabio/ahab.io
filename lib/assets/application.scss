@@ -3,6 +3,7 @@ $text-body-color: #333;
 $text-header-color: $text-body-color;
 
 $sea-blue: hsl(217, 58, 29);
+$shoal-blue: hsla(hue($sea-blue), saturation($sea-blue), lightness($sea-blue), 0.84);
 $peach: hsl(27, 57, 72);
 $white: #fff;
 $light-grey: #a8a8a8;
@@ -63,48 +64,57 @@ header, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-section.jumbotron {
-  $vertical-padding: 84px;
+#page-header {
+  background-color: $shoal-blue;
+  padding: 12px 0;
 
+  .search, button {
+    font-size: 16px;
+    vertical-align: middle;
+  }
+
+  .search {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: $light-grey;
+    margin: 2px 0;
+    outline: none;
+    padding: 5px 8px;
+
+    &:hover {
+      border-color: $medium-grey;
+    }
+
+    &:focus {
+      border-color: $light-grey;
+    }
+  }
+}
+
+#page-footer {
   background-color: $sea-blue;
-  padding-bottom: $vertical-padding;
+  padding: 42px 0;
+  text-transform: uppercase;
+
+  &, a { color: $white; }
+
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  div + div { margin-top: 24px; }
+}
+
+section.jumbotron {
+  background-color: $sea-blue;
+  padding: 84px 0;
   font-size: 18;
   text-align: center;
 
   &, h1 { color: $white; }
-  &, .page-top { width: 100%; }
-
-  .page-top {
-    background: rgba(255, 255, 255, 0.16);
-    padding: 12px 0;
-
-    .search, button {
-      font-size: 16px;
-      vertical-align: middle;
-    }
-
-    .search {
-      background-color: transparent;
-      border: 2px solid transparent;
-      border-radius: 10px;
-      color: $light-grey;
-      margin: 2px 0;
-      outline: none;
-      padding: 5px 8px;
-
-      &:hover {
-        border-color: $medium-grey;
-      }
-
-      &:focus {
-        border-color: $light-grey;
-      }
-    }
-  }
-
   h1 {
     font-size: 70px;
-    margin: $vertical-padding 0 0 0;
+    margin: 0;
   }
 
   .hero {
@@ -182,19 +192,4 @@ section.stats {
   color: $white;
   padding: 16px 0;
   text-transform: uppercase;
-}
-
-footer.credits {
-  $vertical-padding: 42px;
-  padding: $vertical-padding 0 $vertical-padding;
-  text-transform: uppercase;
-
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-
-  a:hover { text-decoration: underline; }
-
-  div + div { margin-top: 24px; }
 }
