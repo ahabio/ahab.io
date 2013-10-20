@@ -29,6 +29,8 @@ button, .btn {
   cursor: pointer;
   outline: none;
   padding: 5px;
+
+  &:hover { text-decoration: none; }
 }
 
 header, h1, h2, h3, h4, h5, h6 {
