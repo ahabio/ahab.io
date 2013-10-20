@@ -17,6 +17,11 @@ group 'assets' do
   gem 'ahab', '~> 0.1'
 end
 
+group 'import' do
+  gem 'nokogiri'
+  gem 'typhoeus'
+end
+
 group 'development' do
   gem 'json'
   gem 'guard'
