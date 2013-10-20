@@ -11,7 +11,6 @@ module IndexHelper
       </a>
     </li>
   <% end %>
-  <li>See more...</li>
 </ul>
 EOT
 
