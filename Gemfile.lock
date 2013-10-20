@@ -16,6 +16,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    ansi (1.4.3)
     arel (4.0.0)
     atomic (1.1.14)
     backports (3.3.5)
@@ -49,6 +50,7 @@ GEM
     guard-rake (0.0.9)
       guard
       rake
+    hashr (0.0.22)
     highline (1.6.20)
     honeybadger (1.8.1)
       json
@@ -60,6 +62,7 @@ GEM
       rb-inotify (>= 0.9)
     lumberjack (1.0.4)
     method_source (0.8.2)
+    mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_test (0.0.2)
@@ -85,7 +88,12 @@ GEM
     rb-inotify (0.9.2)
       ffi (>= 0.5.0)
     require_all (1.3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.12)
+    searchkick (0.2.8)
+      tire
+      tire-contrib
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -106,6 +114,16 @@ GEM
       atomic
     tilt (1.4.1)
     timers (1.1.0)
+    tire (0.6.1)
+      activemodel (>= 3.0)
+      activesupport
+      ansi
+      hashr (~> 0.0.19)
+      multi_json (~> 1.3)
+      rake
+      rest-client (~> 1.6)
+    tire-contrib (0.1.3)
+      tire
     tzinfo (0.3.38)
 
 PLATFORMS
@@ -126,6 +144,7 @@ DEPENDENCIES
   rake (~> 10.0)
   require_all (~> 1.3.1)
   sass (~> 3.2.12)
+  searchkick
   sinatra (~> 1.4.3)
   sinatra-activerecord
   sinatra-contrib (~> 1.4.1)

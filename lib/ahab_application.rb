@@ -27,6 +27,24 @@ class AhabApplication < Sinatra::Base
     erb :index
   end
 
+  get '/search.json' do
+    content_type :json
+    offset = params[:offset] || 0
+    limit = params[:limit] || 40
+    found = Asset.search params[:q] || "", :limit => limit, :offset => offset, :partial => true
+    res = []
+    found.each do |asset|
+      hash = {}.tap do |h|
+        h['name'] = asset.name
+        h['homepage'] = asset.homepage
+        h['description'] = asset.description
+        h['version'] = asset.asset_versions.order('value DESC').first.value
+      end
+      res << hash
+    end
+    res.to_json
+  end
+
   options '/' do
     body ''
     status 204
