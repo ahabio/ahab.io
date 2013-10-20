@@ -32,6 +32,7 @@ class AhabApplication < Sinatra::Base
   helpers TitleHelper
 
   get '/' do
+    no_header_title!
     erb :index, layout: :desktop
   end
 

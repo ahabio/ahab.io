@@ -81,17 +81,19 @@ h3, .call-to-action {
   background-color: $shoal-blue;
   padding: 12px 0;
 
-  .search input, .search img, button {
-    font-size: 16px;
+  * {
     vertical-align: middle;
   }
+
+  .search input, button { font-size: 16px; }
+
+  .search input, h1 a, h1 a:hover, h1 a:visited, button { color: $white; }
 
   .search {
     input {
       background-color: transparent;
       border: 2px solid transparent;
       border-radius: 10px;
-      color: $white;
 
       outline: none;
       padding: 5px 0;
@@ -100,6 +102,14 @@ h3, .call-to-action {
 
     img { height: 1em; }
   }
+
+  h1 {
+    font-size: 22px;
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  a:hover { text-decoration: none; }
 
   button {
     text-transform: capitalize;
