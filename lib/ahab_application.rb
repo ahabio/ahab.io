@@ -5,6 +5,10 @@ require 'honeybadger'
 require 'require_all'
 
 class AhabApplication < Sinatra::Base
+
+  use Rack::ConditionalGet
+  use Rack::ETag
+
   register Sinatra::ActiveRecordExtension
   require_all 'lib/models'
   require_all 'lib/helpers'
