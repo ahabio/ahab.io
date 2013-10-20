@@ -10,7 +10,6 @@ gem 'activerecord', '~> 4.0.0'
 gem 'sinatra-activerecord'
 gem 'mysql2'
 gem 'require_all', '~> 1.3.1'
-gem 'searchkick'
 gem 'sinatra-flash', '~> 0.3.0'
 
 group 'assets' do

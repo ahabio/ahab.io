@@ -1,11 +1,7 @@
-require 'searchkick'
-
 class Asset < ActiveRecord::Base
   class NoVersionAvailable < StandardError; end
   validates :name, presence: true
   has_many :asset_versions
-
-  searchkick
 
   def self.total_with_format
     Asset.count.to_s.gsub(/(\d)(?=(\d\d\d)+(?!\d))/, "\\1,")

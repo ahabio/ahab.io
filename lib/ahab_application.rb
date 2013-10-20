@@ -5,8 +5,6 @@ require 'honeybadger'
 require 'require_all'
 require 'sinatra/flash'
 
-ENV["ELASTICSEARCH_URL"] = "http://ahab.io:9200" if production?
-
 class AhabApplication < Sinatra::Base
   enable    :sessions
   register  Sinatra::ActiveRecordExtension
@@ -45,9 +43,10 @@ class AhabApplication < Sinatra::Base
     content_type :json
     offset = params[:offset] || 0
     limit = params[:limit] || 40
-    found = Asset.search params[:q] || "", :limit => limit, :offset => offset, :partial => true
+    query = params[:q] || ""
+    assets = Asset.where("name like ?", "%#{query}%").limit(limit).offset(offset)
     res = []
-    found.each do |asset|
+    assets.each do |asset|
       hash = {}.tap do |h|
         h['name'] = asset.name
         h['homepage'] = asset.homepage
