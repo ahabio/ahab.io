@@ -4,6 +4,8 @@ require 'sinatra/reloader' if development?
 require 'honeybadger'
 require 'require_all'
 
+ENV["ELASTICSEARCH_URL"] = "http://ahab.io:9200" if production?
+
 class AhabApplication < Sinatra::Base
   register Sinatra::ActiveRecordExtension
   require_all 'lib/models'
