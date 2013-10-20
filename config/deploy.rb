@@ -75,7 +75,7 @@ after 'deploy:update_code', :roles => :app do
   run "cd #{latest_release} && bin/rake assets:compile assets:purge"
 end
 
-task :symlink, :except => { :no_release => true } do
+after 'deploy:update_code', :except => { :no_release => true } do
   run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
 end
 
