@@ -40,24 +40,7 @@
       </div>
     </header>
 
-    <div id="search-results">
-      <!--header class="search-top">
-        <div class="container_12">
-          <div class="grid_5 push_1">
-            <h5>DISPLAYING 1 - 40 OF 180 ASSET RESULTS</h5>
-          </div>
-          <div class="close push_5 grid_1"><a href="#">X</a></div>
-        </div>
-      </header>
-      <section class="search-body"></section>
-      <footer class="search-footer">
-        <div class="container_12">
-          <div class="grid_12">
-            <a href="#">DISPLAY 40 - 80 OF 180 ASSET RESULTS...</a>
-          </div>
-        </div>
-      </footer-->
-    </div>
+    <div id="search-results"></div>
 
     <div id='main'>
       <%= yield %>
@@ -91,8 +74,8 @@
             <ul>
               {{#results}}
                 <li>
-                  <a href="#">
-                    <h4>{{name}} {{version}}</h4>
+                  <a href="{{version.url}}">
+                    <h4>{{name}} {{version.value}}</h4>
                     <h5>{{website}}</h5>
                     <p>{{description}}</p>
                   </a>
