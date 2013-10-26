@@ -10,7 +10,7 @@ gem 'sinatra-contrib', '~> 1.4.1'
 gem 'honeybadger', '~> 1.8.1'
 gem 'activerecord', '~> 4.0.0'
 gem 'sinatra-activerecord'
-gem 'mysql2'
+gem 'pg'
 gem 'require_all', '~> 1.3.1'
 gem 'sinatra-flash', '~> 0.3.0'
 
