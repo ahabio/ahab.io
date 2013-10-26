@@ -1,15 +1,13 @@
-mysql: &MYSQL
-  adapter: mysql2
-  username: root
-  host: 127.0.0.1
-  port: 3306
-  password:
+postgresql: &POSTGRESQL
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
 
 development: &development
-  <<: *MYSQL
+  <<: *POSTGRESQL
   database: ahab_development
 
 test:
-  <<: *MYSQL
+  <<: *POSTGRESQL
   database: ahab_test
 
