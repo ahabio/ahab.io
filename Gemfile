@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
+
 gem 'rack', '~> 1.5.2'
 gem 'redcarpet', '~> 3.0.0'
 gem 'sass', '~> 3.2.12'
