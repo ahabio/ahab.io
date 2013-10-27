@@ -3,15 +3,17 @@ namespace :assets do
   desc 'Compile assets'
   task :compile => :fetch
 
-  # for Heroku:
+  # For Heroku:
   task :precompile => :compile
+
+  directory 'public'
 
   def copy_asset_task(name)
     infile  = "lib/assets/#{name}"
     outfile = "public/#{name}"
 
-    copy_task = file(outfile => infile) do |task|
-      FileUtils.cp(infile, task.name)
+    copy_task = file(outfile => [infile, 'public']) do |task|
+      FileUtils.cp(task.prerequisites.first, task.name)
       puts "Wrote #{task.name}"
     end
 
@@ -29,7 +31,7 @@ namespace :assets do
   def asset_concatenation_task(name, *infiles)
     task_name = "public/#{name}"
 
-    concatenation_task = file(task_name => infiles) do |task|
+    concatenation_task = file(task_name => infiles + ['public']) do |task|
       quoted_infile_list = infiles.map { |f| "\"#{f}\"" }.join(' ')
       puts quoted_infile_list
       sh "cat #{quoted_infile_list} > #{task.name}"
@@ -46,7 +48,7 @@ namespace :assets do
     infile  = "lib/assets/#{name}.scss"
     outfile = "public/#{name}.css"
 
-    compilation_task = file(outfile => infile) do |task|
+    compilation_task = file(outfile => [infile, 'public']) do |task|
       require 'sass'
       css = Sass::compile_file(infile)
       File.write(task.name, css)
