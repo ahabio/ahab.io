@@ -91,18 +91,6 @@ h3, .call-to-action {
     vertical-align: middle;
   }
 
-  .vote-in-rails-rumble {
-    font-size: 22px;
-    margin: 6px 0;
-
-    color: $very-light-grey;
-    a {
-      text-decoration: none;
-      vertical-align: baseline;
-      &, &:visited { color: $peach; }
-    }
-  }
-
   .search input, button { font-size: 16px; }
 
   .search input, h1 a, h1 a:hover, h1 a:visited, button { color: $white; }
