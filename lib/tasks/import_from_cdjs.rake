@@ -77,6 +77,7 @@ namespace :import do
 
   desc 'Import Libraries from cdnjs.com'
   task :from_cdnjs, [ :from_index, :count ] => :require do |task, args|
+    require 'ahab_application'
     from_index = args[:from_index].try(:to_i) || 0
     count = args[:count].try(:to_i)
     libraries(from_index, count).each(&:import!)
