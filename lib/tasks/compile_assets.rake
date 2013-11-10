@@ -3,6 +3,9 @@ namespace :assets do
   desc 'Compile assets'
   task :compile => :fetch
 
+  # for Heroku:
+  task :precompile => :compile
+
   def copy_asset_task(name)
     infile  = "lib/assets/#{name}"
     outfile = "public/#{name}"
