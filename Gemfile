@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.0'
 
 gem 'rack', '~> 1.5.2'
 gem 'redcarpet', '~> 3.0.0'
@@ -36,7 +36,7 @@ group 'test' do
   gem 'cucumber'
   gem 'minitest', '~> 4.2'
   gem 'minitest-colorize', '~> 0.0.5'
-  gem 'debugger'
+  gem 'byebug'
 end
 
 group 'deployment' do
