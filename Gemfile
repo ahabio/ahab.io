@@ -13,6 +13,7 @@ gem 'sinatra-activerecord'
 gem 'pg'
 gem 'require_all', '~> 1.3.1'
 gem 'sinatra-flash', '~> 0.3.0'
+gem 'psych', '~> 2.0.5'
 
 group 'assets' do
   gem 'rake', '~> 10.0'

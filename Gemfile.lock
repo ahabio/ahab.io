@@ -92,6 +92,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
+    psych (2.0.5)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -148,6 +149,7 @@ DEPENDENCIES
   nokogiri
   pg
   pry
+  psych (~> 2.0.5)
   rack (~> 1.5.2)
   rack-test
   rake (~> 10.0)
